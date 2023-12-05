@@ -1,0 +1,8 @@
+/Code/.vs
+/Code/Temp
+/Code/Libs
+/Bin
+*.user
+/Code/ThirdParty/GLFW/*.user
+/Code/Test/*.user
+/Code/Engine/*.user
