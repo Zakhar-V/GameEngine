@@ -1,0 +1,12 @@
+{
+  "Shader": {
+
+    "Source": "Shader/Generic.glsl",
+
+    "Define": {
+
+      "DiffuseTexture" :  1
+    }
+  }
+
+}

@@ -170,8 +170,15 @@
     <ClInclude Include="Common.hpp" />
     <ClInclude Include="Container.hpp" />
     <ClInclude Include="Debug.hpp" />
+    <ClInclude Include="Device.hpp" />
+    <ClInclude Include="DeviceAndroid.hpp" />
+    <ClInclude Include="DeviceWindows.hpp" />
     <ClInclude Include="Engine.hpp" />
     <ClInclude Include="File.hpp" />
+    <ClInclude Include="GraphicsD3D11.hpp" />
+    <ClInclude Include="GraphicsOGL.hpp" />
+    <ClInclude Include="GraphicsGLES3.hpp" />
+    <ClInclude Include="Input.hpp" />
     <ClInclude Include="Math.hpp" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="Serialization.hpp" />

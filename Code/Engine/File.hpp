@@ -9,8 +9,8 @@ namespace Engine
 	//----------------------------------------------------------------------------//
 
 	//!
-#	undef SearchPath
-#	undef CreateDirectory
+//#	undef SearchPath
+//#	undef CreateDirectory
 
 	//!
 	enum class SeekOrigin : int

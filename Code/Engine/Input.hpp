@@ -11,7 +11,37 @@ namespace Engine
 #define gInput Engine::Input::Get()
 
 	//----------------------------------------------------------------------------//
-	// Graphics
+	// 
+	//----------------------------------------------------------------------------//
+
+	class InputDevice
+	{
+
+	};
+
+	class Keyboard : public InputDevice
+	{
+
+	};
+
+	class Mouse : public InputDevice
+	{
+
+	};
+
+	class Sensor : public InputDevice
+	{
+
+	};
+
+	class Gamepad : public InputDevice
+	{
+
+	};
+
+
+	//----------------------------------------------------------------------------//
+	// 
 	//----------------------------------------------------------------------------//
 
 	class ENGINE_API Input : public Subsystem, public Singleton<Input>

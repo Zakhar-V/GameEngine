@@ -481,7 +481,7 @@ namespace Engine
 	void FileSystem::_Shutdown(void)
 	{
 		Variant& _cfg = gSystem->GetConfig("FileSystem");
-		_cfg["RootDir"] = PathUtils::MakeDirectory(PathUtils::Short(m_rootDir, gSystem->GetConfigPath()));
+		_cfg["RootDir"] = gSystem->GetConfigPath(); // PathUtils::MakeDirectory(PathUtils::Short(gSystem->GetConfigPath(), m_appDir));
 
 		Variant& _paths = _cfg["SearchPaths"];
 		_paths.Clear();

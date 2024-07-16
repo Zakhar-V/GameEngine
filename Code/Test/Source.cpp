@@ -147,6 +147,12 @@ public:
 	void Deserialize(Deserializer* _src) { }
 };
 
+ //------------------------------------------
+
+
+
+
+
 #include <clocale>
 
 int main()
@@ -208,7 +214,7 @@ int main()
 	printf("%s\n", s.CStr());
 
 	{
-		Logger::SetMask(Logger::Mask::Level | Logger::Mask::Message);
+		//Logger::SetMask(Logger::Mask::Level | Logger::Mask::Message);
 
 		System _sys;
 
@@ -217,6 +223,7 @@ int main()
 
 			if (gSystem->ConfigFileNotLoaded())
 			{
+				LOG_INFO("ConfigFileNotLoaded");
 				gFileSystem->AddSearchPath("../");
 				gFileSystem->AddSearchPath("../../");
 				gFileSystem->AddSearchPath("Data");

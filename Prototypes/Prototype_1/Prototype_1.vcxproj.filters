@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{2cdbeedd-139b-4edd-96d2-d7bfcd318bea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLFW">
+      <UniqueIdentifier>{af6dc1b9-7930-4cb5-8926-a581c6213b7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLFW\src">
+      <UniqueIdentifier>{390c180d-fdfd-48ca-8d1b-a1ea0b65bd94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stb">
+      <UniqueIdentifier>{a52a9d3d-fdbe-4f73-972a-9add700b5e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Base">
+      <UniqueIdentifier>{79ce33b5-7e56-4d96-9a0f-4995defbf9e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core">
+      <UniqueIdentifier>{c2a36103-94e7-47dc-9687-63a837f66db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{afc48dc9-5149-4f64-80e6-6f832db008ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\context.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\init.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\input.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\monitor.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\wgl_context.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\win32_init.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\win32_joystick.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\win32_monitor.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\win32_thread.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\win32_time.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\win32_window.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\window.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\src\xkb_unicode.c">
+      <Filter>GLFW\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Variant.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Window_.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Input_.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\glfw_config.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\internal.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\mappings.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\wgl_context.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\win32_joystick.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\win32_platform.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\src\xkb_unicode.h">
+      <Filter>GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\glfw3.h">
+      <Filter>GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\glfw3native.h">
+      <Filter>GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="stb\stb_image.h">
+      <Filter>stb</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Container.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="String.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Variant.hpp">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="File.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="System.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Internal.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.hpp">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics2D.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineAPI.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.hpp">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenGL.inl">
+      <Filter>Engine\Core</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ToDo.txt">
+      <Filter>Engine</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

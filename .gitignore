@@ -6,3 +6,13 @@
 /Code/ThirdParty/GLFW/*.user
 /Code/Test/*.user
 /Code/Engine/*.user
+/Prototypes/GameEngine/Code/Temp
+Cache
+.vs
+Write
+Bin
+Temp
+/Prototypes/Prototype_1/Release
+/Prototypes/Prototype_1/Debug
+/Prototypes/Prototype_1/assimp/Debug
+/Prototypes/OneFileTinyEngine/Code/Libs

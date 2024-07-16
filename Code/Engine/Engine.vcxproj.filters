@@ -15,6 +15,12 @@
     <Filter Include="Code\Base">
       <UniqueIdentifier>{cb08f9c8-d0f1-4598-a9ec-a6d55e854a7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\temp">
+      <UniqueIdentifier>{553885e9-dad9-4dd1-bebd-265f50b287d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\temp\platform">
+      <UniqueIdentifier>{26d56b3a-1848-4ea1-8690-bfb7b20a233d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp">
@@ -49,6 +55,27 @@
     </ClInclude>
     <ClInclude Include="System.hpp">
       <Filter>Code\WIP</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceAndroid.hpp">
+      <Filter>Code\temp\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceWindows.hpp">
+      <Filter>Code\temp\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsD3D11.hpp">
+      <Filter>Code\temp\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsGLES3.hpp">
+      <Filter>Code\temp\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.hpp">
+      <Filter>Code\temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.hpp">
+      <Filter>Code\temp</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsOGL.hpp">
+      <Filter>Code\temp\platform</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
