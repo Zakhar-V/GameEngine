@@ -9,39 +9,33 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Code\WIP">
-      <UniqueIdentifier>{89fc5ee4-85d7-4de4-82ac-701330223ad9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Base">
-      <UniqueIdentifier>{cb08f9c8-d0f1-4598-a9ec-a6d55e854a7f}</UniqueIdentifier>
+      <UniqueIdentifier>{672593c4-f206-4bc1-8c48-a48e756f969b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\temp">
-      <UniqueIdentifier>{553885e9-dad9-4dd1-bebd-265f50b287d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\temp\platform">
-      <UniqueIdentifier>{26d56b3a-1848-4ea1-8690-bfb7b20a233d}</UniqueIdentifier>
-    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.hpp">
       <Filter>Code</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.hpp">
-      <Filter>Code\WIP</Filter>
-    </ClInclude>
-    <ClInclude Include="Math.hpp">
-      <Filter>Code\WIP</Filter>
-    </ClInclude>
     <ClInclude Include="File.hpp">
-      <Filter>Code\WIP</Filter>
+      <Filter>Code</Filter>
     </ClInclude>
-    <ClInclude Include="Container.hpp">
-      <Filter>Code\Base</Filter>
+    <ClInclude Include="System.hpp">
+      <Filter>Code</Filter>
     </ClInclude>
     <ClInclude Include="Common.hpp">
       <Filter>Code\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Debug.hpp">
+    <ClInclude Include="Container.hpp">
+      <Filter>Code\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.hpp">
+      <Filter>Code\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.hpp">
       <Filter>Code\Base</Filter>
     </ClInclude>
     <ClInclude Include="Serialization.hpp">
@@ -50,36 +44,18 @@
     <ClInclude Include="String.hpp">
       <Filter>Code\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Object.hpp">
-      <Filter>Code\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="System.hpp">
-      <Filter>Code\WIP</Filter>
-    </ClInclude>
-    <ClInclude Include="DeviceAndroid.hpp">
-      <Filter>Code\temp\platform</Filter>
-    </ClInclude>
-    <ClInclude Include="DeviceWindows.hpp">
-      <Filter>Code\temp\platform</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsD3D11.hpp">
-      <Filter>Code\temp\platform</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsGLES3.hpp">
-      <Filter>Code\temp\platform</Filter>
-    </ClInclude>
-    <ClInclude Include="Device.hpp">
-      <Filter>Code\temp</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.hpp">
-      <Filter>Code\temp</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsOGL.hpp">
-      <Filter>Code\temp\platform</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Debug.cpp">
+    <ClCompile Include="File.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Code\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
       <Filter>Code\Base</Filter>
     </ClCompile>
     <ClCompile Include="Serialization.cpp">
@@ -88,20 +64,8 @@
     <ClCompile Include="String.cpp">
       <Filter>Code\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
+    <ClCompile Include="Common.cpp">
       <Filter>Code\Base</Filter>
     </ClCompile>
-    <ClCompile Include="System.cpp">
-      <Filter>Code\WIP</Filter>
-    </ClCompile>
-    <ClCompile Include="File.cpp">
-      <Filter>Code\WIP</Filter>
-    </ClCompile>
-    <ClCompile Include="Math.cpp">
-      <Filter>Code\WIP</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ToDo.txt" />
   </ItemGroup>
 </Project>

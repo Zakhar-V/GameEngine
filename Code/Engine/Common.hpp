@@ -82,8 +82,8 @@
 #	define NDEBUG
 #endif
 
-#ifdef _DEBUG
-#	define ASSERT(x, ...) ((x) ? ((void)0) : (Engine::LogMsg(Engine::LogLevel::Assert, __FUNCTION__, __FILE__, __LINE__, #x " (" ##__VA_ARGS__ ")")))
+#ifdef DEBUG
+#	define ASSERT(x, ...) ((x) ? ((void)0) : (Engine::Logger::Message(Engine::Logger::Level::Assert, __FUNCTION__, __FILE__, __LINE__, #x " (" ##__VA_ARGS__ ")")))
 #else
 #	define ASSERT(x, ...)
 #endif
@@ -128,34 +128,97 @@ namespace Engine
 	inline bool operator & (AccessMode _lhs, AccessMode _rhs) { return (uint)_lhs & (uint)_rhs; }
 
 	//----------------------------------------------------------------------------//
-	// Log (in Debug.cpp)
+	// Debug
 	//----------------------------------------------------------------------------//
 
-#	define LOG_MSG(level, msg, ...) Engine::LogMsg(level, __FUNCTION__, __FILE__, __LINE__, msg, ##__VA_ARGS__)
-#	define LOG_FATAL(msg, ...) LOG_MSG(Engine::LogLevel::Fatal, msg, ##__VA_ARGS__)
-#	define LOG_ERROR(msg, ...) LOG_MSG(Engine::LogLevel::Error, msg, ##__VA_ARGS__)
-#	define LOG_WARNING(msg, ...) LOG_MSG(Engine::LogLevel::Warning, msg, ##__VA_ARGS__)
-#	define LOG_EVENT(msg, ...) LOG_MSG(Engine::LogLevel::Event, msg, ##__VA_ARGS__)
-#	define LOG_INFO(msg, ...) LOG_MSG(Engine::LogLevel::Info, msg, ##__VA_ARGS__)
-#	define LOG_DEBUG(msg, ...) LOG_MSG(Engine::LogLevel::Debug, msg, ##__VA_ARGS__)
+#	define LOG_MSG(level, msg, ...) Engine::Logger::Message(level, __FUNCTION__, __FILE__, __LINE__, msg, ##__VA_ARGS__)
+#	define LOG_FATAL(msg, ...) LOG_MSG(Engine::Logger::Level::Fatal, msg, ##__VA_ARGS__)
+#	define LOG_ERROR(msg, ...) LOG_MSG(Engine::Logger::Level::Error, msg, ##__VA_ARGS__)
+#	define LOG_WARNING(msg, ...) LOG_MSG(Engine::Logger::Level::Warning, msg, ##__VA_ARGS__)
+#	define LOG_EVENT(msg, ...) LOG_MSG(Engine::Logger::Level::Event, msg, ##__VA_ARGS__)
+#	define LOG_INFO(msg, ...) LOG_MSG(Engine::Logger::Level::Info, msg, ##__VA_ARGS__)
+#	define LOG_DEBUG(msg, ...) LOG_MSG(Engine::Logger::Level::Debug, msg, ##__VA_ARGS__)
 
-	//!
-	enum class LogLevel : int
+	class ENGINE_API Logger final
 	{
-		Assert = 1 << 0,
-		Fatal = 1 << 1,
-		Error = 1 << 2,
-		Warning = 1 << 3,
-		Event = 1 << 4,
-		Info = 1 << 5,
-		Debug = 1 << 6,
+	public:
+
+		//!
+		struct Level
+		{
+			enum Enum : int
+			{
+				Assert = 0x1,
+				Fatal = 0x2,
+				Error = 0x4,
+				Warning = 0x8,
+				Event = 0x10,
+				Info = 0x20,
+				Debug = 0x40,
+			};
+		};
+
+		//!
+		struct Mask
+		{
+			enum Enum : int
+			{
+				Level = 0x1,
+				Timestamp = 0x2,
+				FileLine = 0x4,
+				Function = 0x8,
+				Message = 0x10,
+				All = Level | Timestamp | Function | FileLine | Message,
+			};
+		};
+
+		//!
+		struct MessageInfo
+		{
+			int level;
+			int mask;
+			uint64 time; // ?
+			const char* func;
+			const char* file;
+			int line;
+			const char* msg;
+		};
+		//!
+		typedef void(*Callback)(const MessageInfo&);
+
+		//!
+		static void SetMask(uint _mask);
+		//!
+		static int GetMask(void);
+		//!
+		static void SetCallback(Callback _cb);
+		//!
+		static Callback GetCallback(void);
+		//!
+		static void Message(Level::Enum _level, const char* _func, const char* _file, int _line, const char* _msg, ...);
+		//!
+		static void MessageV(Level::Enum _level, const char* _func, const char* _file, int _line, const char* _msg, va_list _args);
+
+		//!
+		static void DefaultCallback(const MessageInfo& _msg);
+
+	private:
+		//!
+		Logger(void);
+		//!
+		~Logger(void);
+		//!
+		Logger(const Logger&) = delete;
+		//!
+		Logger& operator = (const Logger&) = delete;
+
+		//!
+		static int s_mask;
+		//!
+		static Callback s_callback;
+		//!
+		static Logger s_instance;
 	};
-
-	//!
-	inline int operator | (LogLevel _lhs, LogLevel _rhs) { return (int)_lhs | (int)_rhs; }
-
-	//!
-	void ENGINE_API LogMsg(LogLevel _level, const char* _func, const char* _file, int _line, const char* _msg, ...);
 
 	//----------------------------------------------------------------------------//
 	// Move semantics

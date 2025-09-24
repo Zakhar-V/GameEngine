@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -167,36 +167,27 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Common.hpp" />
     <ClInclude Include="Container.hpp" />
-    <ClInclude Include="Debug.hpp" />
-    <ClInclude Include="Device.hpp" />
-    <ClInclude Include="DeviceAndroid.hpp" />
-    <ClInclude Include="DeviceWindows.hpp" />
     <ClInclude Include="Engine.hpp" />
     <ClInclude Include="File.hpp" />
-    <ClInclude Include="GraphicsD3D11.hpp" />
-    <ClInclude Include="GraphicsOGL.hpp" />
-    <ClInclude Include="GraphicsGLES3.hpp" />
-    <ClInclude Include="Input.hpp" />
     <ClInclude Include="Math.hpp" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="Serialization.hpp" />
     <ClInclude Include="String.hpp" />
     <ClInclude Include="System.hpp" />
-    <ClInclude Include="Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="Common.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Serialization.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="System.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ToDo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
