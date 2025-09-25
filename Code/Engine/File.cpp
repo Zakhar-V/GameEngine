@@ -720,18 +720,34 @@ namespace Engine
 		return true;
 	}
 	//----------------------------------------------------------------------------//
-	bool FileSystem::LoadJson(const String& _path, Variant& _dst)
+	bool FileSystem::LoadJson(const String& _path, Variant& _dst, String* _err)
 	{
-		SharedPtr<File> _file = OpenFile(_path);
-		return _file && _dst.Load(_file);
+		SharedPtr<File> _src = OpenFile(_path);
+
+		if (_src)
+		{
+			Array<char> _data;
+			_data.Resize((uint)_src->Size());
+			_src->Read(_data.Data(), (uint)_data.Size());
+
+			String _error;
+			if (!_dst.Parse(_data.Data(), &_error))
+			{
+				LOG_ERROR("%s%s", _src->GetName().CStr(), _error.CStr());
+				if (_err)
+					*_err = _error;
+				return false;
+			}
+		}
+		return true;
 	}
 	//----------------------------------------------------------------------------//
 	bool FileSystem::SaveJson(const String& _path, const Variant& _src)
 	{
-		SharedPtr<File> _file = OpenFile(_path, AccessMode::Write);
-		if (_file)
+		SharedPtr<File> _dst = OpenFile(_path, AccessMode::Write);
+		if (_dst)
 		{
-			_src.Save(_file);
+			_dst->WriteString(_src.Print(), false);
 			return true;
 		}
 		return false;

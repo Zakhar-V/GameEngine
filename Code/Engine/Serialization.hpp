@@ -5,12 +5,6 @@
 namespace Engine
 {
 	//----------------------------------------------------------------------------//
-	// Definitions
-	//----------------------------------------------------------------------------//
-
-	class File;
-
-	//----------------------------------------------------------------------------//
 	// Variant
 	//----------------------------------------------------------------------------//
 
@@ -226,11 +220,6 @@ namespace Engine
 		bool Parse(const char* _str, String* _error = nullptr);
 		//!
 		String Print(void) const;
-
-		//!
-		bool Load(File* _src, String* _err = nullptr);
-		//!
-		void Save(File* _dst) const;
 
 		//!
 		static const Variant Null;

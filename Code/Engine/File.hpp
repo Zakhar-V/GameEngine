@@ -346,7 +346,7 @@ namespace Engine
 
 
 		//!
-		bool LoadJson(const String& _path, Variant& _dst);
+		bool LoadJson(const String& _path, Variant& _dst, String* _err = nullptr);
 		//!
 		bool SaveJson(const String& _path, const Variant& _src);
 

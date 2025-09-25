@@ -422,34 +422,6 @@ namespace Engine
 		return _str;
 	}
 	//----------------------------------------------------------------------------//
-	bool Variant::Load(File* _src, String* _err)
-	{
-		if (_src)
-		{
-			Array<char> _data;
-			_data.Resize((uint)_src->Size());
-			_src->Read(_data.Data(), (uint)_data.Size());
-
-			String _error;
-			if (!Parse(_data.Data(), &_error))
-			{
-				LOG_ERROR("%s%s", _src->GetName().CStr(), _error.CStr());
-				if (_err)
-					*_err = _error;
-				return false;
-			}
-
-		}
-		return true;
-	}
-	//----------------------------------------------------------------------------//
-	void Variant::Save(File* _dst) const
-	{
-
-		if (_dst)
-			_dst->WriteString(Print(), false);
-	}
-	//----------------------------------------------------------------------------//
 	bool Variant::_Parse(Tokenizer& _str)
 	{
 		//http://www.json.org/json-ru.html
