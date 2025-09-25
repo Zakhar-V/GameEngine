@@ -1,4 +1,5 @@
 #include "File.hpp"
+#include "Main.hpp"
 #include <io.h>
 #include <sys/stat.h>
 #ifdef _MSC_VER
@@ -457,7 +458,7 @@ namespace Engine
 	//----------------------------------------------------------------------------//
 	bool FileSystem::_Startup(void)
 	{
-		const Variant& _cfg = gSystem->GetConfig("FileSystem");
+		const Variant& _cfg = gMain->GetConfig("FileSystem");
 
 		if (_cfg.IsNull())
 		{
@@ -468,7 +469,7 @@ namespace Engine
 			String _root = _cfg["RootDir"];
 
 			if (_root.NonEmpty())
-				m_rootDir = PathUtils::MakeDirectory(PathUtils::Full(_root, gSystem->GetConfigPath()));
+				m_rootDir = PathUtils::MakeDirectory(PathUtils::Full(_root, gMain->GetConfigPath()));
 
 			const Variant& _paths = _cfg["SearchPaths"];
 			for(auto i : _paths)
@@ -480,8 +481,8 @@ namespace Engine
 	//----------------------------------------------------------------------------//
 	void FileSystem::_Shutdown(void)
 	{
-		Variant& _cfg = gSystem->GetConfig("FileSystem");
-		_cfg["RootDir"] = gSystem->GetConfigPath(); // PathUtils::MakeDirectory(PathUtils::Short(gSystem->GetConfigPath(), m_appDir));
+		Variant& _cfg = gMain->GetConfig("FileSystem");
+		_cfg["RootDir"] = gMain->GetConfigPath(); // PathUtils::MakeDirectory(PathUtils::Short(gSystem->GetConfigPath(), m_appDir));
 
 		Variant& _paths = _cfg["SearchPaths"];
 		_paths.Clear();

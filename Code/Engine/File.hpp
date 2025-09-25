@@ -300,7 +300,7 @@ namespace Engine
 	//----------------------------------------------------------------------------//
 
 	//!
-	class ENGINE_API FileSystem : public Subsystem, public Singleton<FileSystem>
+	class ENGINE_API FileSystem : public System, public Singleton<FileSystem>
 	{
 	public:
 		RTTI(FileSystem);

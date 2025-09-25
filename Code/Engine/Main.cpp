@@ -1,41 +1,17 @@
-#include "System.hpp"
+#include "Main.hpp"
+#include "File.hpp"
 
 namespace Engine
 {
-	//----------------------------------------------------------------------------//
-	// System
-	//----------------------------------------------------------------------------//
-
-	//----------------------------------------------------------------------------//
-	bool System::Startup(void)
-	{
-		if (m_initstate == InitState::Initial)
-		{
-			m_initstate = _Startup() ? InitState::Started : InitState::Failed;
-		}
-		return m_initstate == InitState::Started;
-	}
-	//----------------------------------------------------------------------------//
-	void System::Shutdown(void)
-	{
-		if (m_initstate != InitState::Initial)
-		{
-			_Shutdown();
-			m_initstate = InitState::Initial;
-		}
-	}
-	//----------------------------------------------------------------------------//
-
 	//----------------------------------------------------------------------------//
 	// 
 	//----------------------------------------------------------------------------//
 
 	//---------------------------------------------------------------------------//
-	/*System::System(const String& _overrideConfigFileName)
+	Main::Main(const String& _overrideConfigFileName)
 	{
-		m_subsystems.Push(new FileSystem);
-		
-		
+		m_systems.Push(new FileSystem);
+
 		// load config
 		{
 			String _nname = PathUtils::Full(_overrideConfigFileName);
@@ -95,7 +71,7 @@ namespace Engine
 			m_configPath = PathUtils::FilePath(m_configName);
 		}
 
-		
+
 
 
 
@@ -103,11 +79,11 @@ namespace Engine
 		//m_subsystems.Push(new Graphics);
 	}
 	//---------------------------------------------------------------------------//
-	System::~System(void)
+	Main::~Main(void)
 	{
-		while (m_subsystems.NonEmpty())
+		while (m_systems.NonEmpty())
 		{
-			m_subsystems.Pop();
+			m_systems.Pop();
 		}
 
 		// save config
@@ -127,19 +103,19 @@ namespace Engine
 		}
 	}
 	//---------------------------------------------------------------------------//
-	bool System::ConfigFileNotLoaded(void)
+	bool Main::ConfigFileNotLoaded(void)
 	{
 		return !m_configLoaded;
 	}
 	//---------------------------------------------------------------------------//
-	Variant& System::GetConfig(const String& _section)
+	Variant& Main::GetConfig(const String& _section)
 	{
 		return _section.IsEmpty() ? m_config : m_config[_section];
 	}
 	//---------------------------------------------------------------------------//
-	bool System::OnEvent(int _id, const Variant& _args)
+	bool Main::OnEvent(int _id, const Variant& _args)
 	{
-		for (auto i : m_subsystems)
+		for (auto i : m_systems)
 		{
 			if (i->OnEvent(_id, _args))
 				return true;
@@ -147,9 +123,9 @@ namespace Engine
 		return false;
 	}
 	//---------------------------------------------------------------------------//
-	bool System::SendEventReverse(int _id, const Variant& _args)
+	bool Main::SendEventReverse(int _id, const Variant& _args)
 	{
-		for (auto i = m_subsystems.End(); i-- != m_subsystems.Begin();)
+		for (auto i = m_systems.End(); i-- != m_systems.Begin();)
 		{
 			if ((*i)->OnEvent(_id, _args))
 				return true;
@@ -157,26 +133,26 @@ namespace Engine
 		return false;
 	}
 	//---------------------------------------------------------------------------//
-	bool System::Frame(void)
+	bool Main::Frame(void)
 	{
-		return
-			OnEvent(FrameEvent::Begin) &&
+		return false;
+			/*OnEvent(FrameEvent::Begin) &&
 			OnEvent(FrameEvent::Update) &&
 			OnEvent(FrameEvent::Draw) &&
-			SendEventReverse(FrameEvent::End);
+			SendEventReverse(FrameEvent::End);*/
 	}
 	//---------------------------------------------------------------------------//
-	bool System::_Startup(void)
+	bool Main::_Startup(void)
 	{
 		LOG_EVENT("Startup Engine");
 
 		Variant _settings;
 		//TODO:
-		for (auto i : m_subsystems)
+		for (auto i : m_systems)
 			i->LoadSettings(_settings);
 
 
-		for (auto i : m_subsystems)
+		for (auto i : m_systems)
 		{
 			if (!i->Startup())
 			{
@@ -190,18 +166,17 @@ namespace Engine
 		return true;
 	}
 	//---------------------------------------------------------------------------//
-	void System::_Shutdown(void)
+	void Main::_Shutdown(void)
 	{
 		LOG_EVENT("Shutdown Engine");
 
-		for (auto i = m_subsystems.End(); i-- != m_subsystems.Begin();)
+		for (auto i = m_systems.End(); i-- != m_systems.Begin();)
 		{
 			(*i)->Shutdown();
 		}
 
 		LOG_INFO("Shutdown Engine: successful");
-
-	}*/
+	}
 	//---------------------------------------------------------------------------//
 
 	//----------------------------------------------------------------------------//

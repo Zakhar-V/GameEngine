@@ -1,5 +1,4 @@
 #include <Engine.hpp>
-#include <Object.hpp>
 
 #include <stdio.h>
 
@@ -50,6 +49,8 @@ namespace Engine
 }
 
 using namespace Engine;
+
+
 
 class Resource : public Object
 {
@@ -147,10 +148,19 @@ public:
 	void Deserialize(Deserializer* _src) { }
 };
 
- //------------------------------------------
 
+//---------------------------------------------------------------------------//
+// 
+//---------------------------------------------------------------------------//
 
+class Application : public Engine::Main
+{
 
+};
+
+	//---------------------------------------------------------------------------//
+	// 
+	//---------------------------------------------------------------------------//
 
 
 #include <clocale>
@@ -218,10 +228,10 @@ int main()
 
 		System _sys;
 
-		if (gSystem->Startup())
+		if (gMain->Startup())
 		{
 
-			if (gSystem->ConfigFileNotLoaded())
+			if (gMain->ConfigFileNotLoaded())
 			{
 				LOG_INFO("ConfigFileNotLoaded");
 				gFileSystem->AddSearchPath("../");
@@ -233,7 +243,7 @@ int main()
 				
 			}
 			{
-				Variant& _app = gSystem->GetConfig("Application");
+				Variant& _app = gMain->GetConfig("Application");
 				if (_app.IsNull())
 				{
 
@@ -290,14 +300,14 @@ int main()
 
 			LOG_INFO("confing '%s'", gFileSystem->FindConfigFile("").CStr());*/
 
-			while (gSystem->Frame())
+			while (gMain->Frame())
 			{
 
 			}
 
 		}
 
-		gSystem->Shutdown();
+		gMain->Shutdown();
 	}
 
 

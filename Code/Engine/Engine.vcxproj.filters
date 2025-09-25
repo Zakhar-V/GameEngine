@@ -44,6 +44,9 @@
     <ClInclude Include="String.hpp">
       <Filter>Code\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Main.hpp">
+      <Filter>Code</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="File.cpp">
@@ -66,6 +69,9 @@
     </ClCompile>
     <ClCompile Include="Common.cpp">
       <Filter>Code\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Code</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
